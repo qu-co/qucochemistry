@@ -2,7 +2,7 @@ alabaster==0.7.12
 antlr4-python3-runtime==4.7.2
 Babel==2.7.0
 backcall==0.1.0
-bleach==3.1.0
+bleach==3.1.1
 certifi==2019.6.16
 chardet==3.0.4
 cycler==0.10.0
