@@ -1,6 +1,14 @@
 import io
+import sys
 
 from setuptools import setup, find_packages
+
+VERSION_ERROR = """
+qucochemistry requires Python 3.6 or higher
+"""
+
+if sys.version_info < (3, 6):
+    raise ImportError(VERSION_ERROR)
 
 # This reads the __version__ variable
 exec(open('qucochemistry/_version.py').read())
@@ -27,15 +35,15 @@ setup(
     install_requires=[
         # The minimum spec for a working qucochemistry install.
         # note to developers: this should be a subset of requirements.txt
-        'numpy==1.15.4',
-        'scipy==1.2.0',
-        'openfermion==0.9.0',
-        'pyquil==2.7.2',
+        'openfermion==0.10.0',
+        'pyquil>=2.7.2, <=2.19.0',
     ],
     packages=find_packages(exclude=["*.tests", "*.tests.*", "tests.*", "tests"]),
     license="Apache 2",
     classifiers=[
-        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.6",
+	"Programming Language :: Python :: 3.7",
+	"Programming Language :: Python :: 3.8",
         "License :: OSI Approved :: Apache Software License",
         "Operating System :: OS Independent",
     ],

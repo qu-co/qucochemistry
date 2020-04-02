@@ -5,7 +5,7 @@ from . conftest import ground_states
 
 
 @pytest.mark.parametrize('vqe_strategy', ['UCCSD', 'HF'])
-@pytest.mark.parametrize('vqe_qc_backend', ['Aspen-qvm', 'Nq-qvm'])
+@pytest.mark.parametrize('vqe_qc_backend', ['Nq-qvm'])
 @pytest.mark.parametrize('vqe_parametricflag', [True, False])
 def test_qc_parametric_flag(vqe_qc, vqe_strategy, vqe_qc_backend, vqe_parametricflag):
     ec = vqe_qc.objective_function()
@@ -14,7 +14,7 @@ def test_qc_parametric_flag(vqe_qc, vqe_strategy, vqe_qc_backend, vqe_parametric
     assert np.isclose(ec, ground_states[vqe_qc.strategy][1], atol=2e-1)
 
 
-@pytest.mark.parametrize('vqe_qc_backend', ['Aspen-qvm', 'Nq-qvm'])
+@pytest.mark.parametrize('vqe_qc_backend', ['Nq-qvm'])
 @pytest.mark.parametrize('vqe_parametricflag', [True])
 def test_qc_custom_program(vqe_qc, vqe_qc_backend, vqe_parametricflag):
     ec = vqe_qc.objective_function()
