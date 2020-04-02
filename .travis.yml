@@ -1,8 +1,10 @@
 language: python 
 
 # Python3.7 not available for trusty distribution
-dist: 
-  - xenial
+os:
+  - linux
+  - osx
+  - windows
 
 python:
   - "3.6"
