@@ -1,14 +1,6 @@
 import io
-import sys
 
 from setuptools import setup, find_packages
-
-VERSION_ERROR = """
-qucochemistry requires Python 3.6 or higher
-"""
-
-if sys.version_info < (3, 6):
-    raise ImportError(VERSION_ERROR)
 
 # This reads the __version__ variable
 exec(open('qucochemistry/_version.py').read())
