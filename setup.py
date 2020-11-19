@@ -28,7 +28,7 @@ setup(
         # The minimum spec for a working qucochemistry install.
         # note to developers: this should be a subset of requirements.txt
         'openfermion==0.10.0',
-        'pyquil>=2.7.2, <=2.19.0',
+        'pyquil>=2.16.0, <=2.24.0',
     ],
     packages=find_packages(exclude=["*.tests", "*.tests.*", "tests.*", "tests"]),
     license="Apache 2",

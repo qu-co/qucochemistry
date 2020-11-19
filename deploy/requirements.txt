@@ -1,5 +1,6 @@
-pyquil>=2.7.2,<=2.19.0
+pyquil>=2.16.0,<=2.24.0
 openfermion==0.10.0
 numpy>=1.11.0
 scipy>=1.1.0
 bleach>=3.1.4
+noisyopt>=0.2.2

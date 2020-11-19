@@ -1,12 +1,12 @@
 from typing import List, Union
 
 from pyquil.api import QuantumComputer, WavefunctionSimulator
-from pyquil.numpy_simulator import NumpyWavefunctionSimulator
+from pyquil.simulation import NumpyWavefunctionSimulator
 from pyquil.pyqvm import PyQVM
 from pyquil.quil import Program, percolate_declares
 from pyquil.gates import I, RESET, MEASURE
 from pyquil.paulis import PauliSum, PauliTerm, ID
-from pyquil.operator_estimation import TomographyExperiment, group_experiments, ExperimentSetting, TensorProductState
+from pyquil.operator_estimation import Experiment, group_experiments, ExperimentSetting, TensorProductState
 
 from openfermion.hamiltonians import MolecularData
 from openfermion.utils import uccsd_singlet_generator, normal_ordered, uccsd_singlet_get_packed_amplitudes,\
@@ -263,7 +263,7 @@ class VQEexperiment:
             else:
                 experiments.append(ExperimentSetting(TensorProductState(), term))
 
-        suite = TomographyExperiment(experiments, program=Program())
+        suite = Experiment(experiments, program=Program())
 
         gsuite = group_experiments(suite)
 
